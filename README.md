@@ -1,8 +1,39 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Collaborate
 
-Currently, two official plugins are available:
+## Что такое "Collaborate"?
+Это значит, что мы можем работать над проектом вместе.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Как начать?
+
+1. Я создал проект и сделал его доступным для тебя.
+2. Я дам тебе ссылку на проект.
+
+### Что делать с ссылкой?
+
+- Скопируй ссылку.
+- Открой терминал и введи:
+
+```bash
+git clone git remote add origin https://github.com/as777ms/gender_equality.git
+```
+
+## Как работать?
+
+Перед началом всегда обновляй проект:
+
+```bash
+git pull
+```
+
+После работы загружай свои изменения:
+
+```bash
+git add .
+git commit -m "Твои изменения"
+git push
+```
+
+## Если что-то не так?
+
+Напиши мне, и я помогу.
