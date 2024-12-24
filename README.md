@@ -4,18 +4,13 @@
 ## Что такое "Collaborate"?
 Это значит, что мы можем работать над проектом вместе.
 
-## Как начать?
-
-1. Я создал проект и сделал его доступным для тебя.
-2. Я дам тебе ссылку на проект.
-
 ### Что делать с ссылкой?
 
 - Скопируй ссылку.
 - Открой терминал и введи:
 
 ```bash
-git clone git remote add origin https://github.com/as777ms/gender_equality.git
+git clone https://github.com/as777ms/gender_equality.git
 ```
 
 ## Как работать?
