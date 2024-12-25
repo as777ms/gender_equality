@@ -11,12 +11,13 @@ import Stories from './pages/stories/Stories.jsx';
 import Support from './pages/support/Support.jsx';
 import headerimg from './assets/img/headerimg.jpg'
 import imgheader2 from './assets/img/imgheader2.jpg'
+import womenhug from './assets/img/womenhug.jpg'
 const App = () => {
   return (
     <Router>
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home headerimg={headerimg} imgheader2={imgheader2}/>} />
+        <Route index element={<Home headerimg={headerimg} imgheader2={imgheader2} womenhug={womenhug}/>} />
         <Route path="about" element={<About />} />
         <Route path="info" element={<Info />} />
         <Route path="*" element={<NotFound />} />
