@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { FaInstagram, FaFacebook, FaTelegram, FaPhoneAlt } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
@@ -80,7 +79,7 @@ const Layout = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="p-6 bg-gray-100 min-h-screen">
+      <main className="bg-gray-100">
         <Outlet />
       </main>
 

@@ -1,6 +1,10 @@
+import Test from "../../components/test/Test"
+
 const Info = () => {
   return (
-    <div>Info</div>
+    <>
+    <Test />
+    </>
   )
 }
 

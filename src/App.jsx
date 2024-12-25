@@ -9,13 +9,14 @@ import Anonymsms from './pages/anonymsms/Anonymsms.jsx';
 import Specialprojects from './pages/specialprojects/Specialprojects.jsx';
 import Stories from './pages/stories/Stories.jsx';
 import Support from './pages/support/Support.jsx';
-
+import headerimg from './assets/img/headerimg.jpg'
+import imgheader2 from './assets/img/imgheader2.jpg'
 const App = () => {
   return (
     <Router>
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route index element={<Home headerimg={headerimg} imgheader2={imgheader2}/>} />
         <Route path="about" element={<About />} />
         <Route path="info" element={<Info />} />
         <Route path="*" element={<NotFound />} />
