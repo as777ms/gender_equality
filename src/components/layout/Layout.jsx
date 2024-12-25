@@ -1,12 +1,18 @@
+import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { FaInstagram, FaFacebook, FaTelegram, FaPhoneAlt } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaTelegram, FaPhoneAlt, FaBars } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 const Layout = () => {
   const { t, i18n } = useTranslation();
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   const handleLanguageChange = (event) => {
     i18n.changeLanguage(event.target.value);
+  };
+
+  const toggleDrawer = () => {
+    setDrawerOpen(!isDrawerOpen);
   };
 
   return (
@@ -27,7 +33,7 @@ const Layout = () => {
             className="w-full p-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-600"
           />
         </div>
-        {/* Contact Us and Language Selector */}
+        {/* Contact Us, Language Selector, and Drawer Toggle */}
         <div className="flex items-center space-x-4">
           <button className="flex items-center px-4 py-2 bg-gray-700 text-white font-bold rounded-md hover:bg-gray-600 focus:ring-2 focus:ring-gray-400 focus:outline-none shadow-md transition-all">
             <FaPhoneAlt className="mr-2" />
@@ -41,19 +47,63 @@ const Layout = () => {
             <option value="en">EN</option>
             <option value="tjk">TJK</option>
           </select>
+          {/* Drawer Toggle Button */}
+          <button
+            className="block md:hidden p-2 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none"
+            onClick={toggleDrawer}
+          >
+            <FaBars className="w-6 h-6 text-white" />
+          </button>
         </div>
       </header>
 
+      {/* Drawer for Mobile Navigation */}
+      {isDrawerOpen && (
+  <div className="fixed inset-0 backdrop-blur-md bg-white/10 z-50 flex flex-col items-center justify-center text-white">
+    {/* Close Button */}
+    <button
+      className="absolute top-4 right-4 p-2 bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none"
+      onClick={toggleDrawer}
+    >
+      ✕
+    </button>
+
+    {/* Navigation Links */}
+    <nav className="text-center text-lg w-full max-w-xs rounded-lg p-4 bg-white/20 shadow-lg">
+      {[
+        { to: '/', label: t('home') },
+        { to: '/about', label: t('about') },
+        { to: '/support', label: t('support') },
+        { to: '/info', label: t('info') },
+        { to: '/anonymsms', label: t('Anonimnii istorii') },
+        { to: '/specialprojects', label: t('Special Projects') },
+        { to: '/stories', label: t('istorii') },
+      ].map((link, index) => (
+        <Link
+          key={index}
+          to={link.to}
+          onClick={toggleDrawer}
+          className="block py-4 border-b border-white/30 hover:text-blue-400 last:border-b-0"
+        >
+          {link.label}
+        </Link>
+      ))}
+    </nav>
+  </div>
+)}
+
+
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-center text-white py-8">
-  <h1 className="text-4xl font-bold mb-4">{t('Together Against Violence')}</h1>
-  <p className="text-lg">{t('Empowering change, fostering equality, and building a safer future for all.')}</p>
-</div>
-
+        <h1 className="text-4xl font-bold mb-4">{t('Together Against Violence')}</h1>
+        <p className="text-lg">
+          {t('Empowering change, fostering equality, and building a safer future for all.')}
+        </p>
+      </div>
 
       {/* Navigation Bar */}
-      <nav className="w-full bg-gray-900 p-4 shadow-md">
-        <div className="flex flex-wrap space-x-6 justify-center text-white text-lg">
+      <nav className="w-full bg-gray-900 p-4 shadow-md hidden md:flex justify-center">
+        <div className="flex space-x-6 text-white text-lg">
           <Link to="/" className="hover:underline hover:text-gray-400">
             {t('home')}
           </Link>
@@ -90,34 +140,6 @@ const Layout = () => {
           <span className="text-gray-400">Empower. Educate. End Violence.</span>
         </p>
       </footer>
-
-      {/* Media Queries */}
-      <style>
-        {`
-          @media (max-width: 768px) {
-            header .hidden.md\\:block {
-              display: none; /* Hide search bar on small screens */
-            }
-            header {
-              flex-direction: column;
-              text-align: center;
-            }
-            header > div {
-              margin-bottom: 1rem;
-            }
-          }
-          @media (max-width: 480px) {
-            header button {
-              padding: 0.5rem 1rem; /* Smaller button on very small screens */
-              font-size: 0.875rem;
-            }
-            nav div {
-              flex-direction: column;
-              gap: 0.5rem; /* Adjust nav links */
-            }
-          }
-        `}
-      </style>
     </>
   );
 };
