@@ -14,12 +14,13 @@ import imgheader2 from './assets/img/imgheader2.jpg'
 import womenhug from './assets/img/womenhug.jpg'
 import huggingpeople from './assets/img/huggingpeople.jpg'
 import location from './assets/img/location.png'
+import womenlaptop from './assets/img/womenlaptop.jpg'
 const App = () => {
   return (
     <Router>
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home headerimg={headerimg} imgheader2={imgheader2} womenhug={womenhug} huggingpeople={huggingpeople} location={location}/>} />
+        <Route index element={<Home headerimg={headerimg} imgheader2={imgheader2} womenhug={womenhug} huggingpeople={huggingpeople} location={location} womenlaptop={womenlaptop}/>} />
         <Route path="about" element={<About />} />
         <Route path="info" element={<Info />} />
         <Route path="*" element={<NotFound />} />
