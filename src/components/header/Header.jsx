@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 const Header = ({ imgheader2 }) => {
   const { t, i18n } = useTranslation();
-  const handleLanguageChange = (event) => {
-    i18n.changeLanguage(event.target.value);
-  };
+//   const handleLanguageChange = (event) => {
+//     i18n.changeLanguage(event.target.value);
+//   };
 
   return (
     <div
@@ -56,11 +56,11 @@ const Header = ({ imgheader2 }) => {
           </button>
         </Link>
       </div>
-      <select onChange={handleLanguageChange} style={{ position: 'absolute', top: '20px', right: '20px', padding: '5px' }}>
+      {/* <select onChange={handleLanguageChange} style={{ position: 'absolute', top: '20px', right: '20px', padding: '5px' }}>
         <option value="en">EN</option>
         <option value="ru">RU</option>
         <option value="tjk">TJK</option>
-      </select>
+      </select> */}
     </div>
   );
 };

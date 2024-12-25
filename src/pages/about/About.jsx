@@ -11,17 +11,6 @@ const About = () => {
   return (
     <div className="bg-[#a6b56e] min-h-screen">
       {/* Language Switcher */}
-      <div className="text-right p-4">
-        <button onClick={() => changeLanguage('en')} className="mx-2">
-          English
-        </button>
-        <button onClick={() => changeLanguage('tj')} className="mx-2">
-          Тоҷикӣ
-        </button>
-        <button onClick={() => changeLanguage('ru')} className="mx-2">
-          Русский
-        </button>
-      </div>
 
       {/* Top Section */}
       <div className="text-center py-12">
