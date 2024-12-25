@@ -9,7 +9,7 @@ const About = () => {
   };
 
   return (
-    <div className="bg-[#a6b56e] min-h-screen">
+    <div className="bg-gradient-to-r from-indigo-200 via-blue-100 to-white min-h-screen">
       {/* Language Switcher */}
 
       {/* Top Section */}

@@ -1,10 +1,11 @@
 import Clients from "../../components/clients/Clients"
+import EmpowerSection from "../../components/empowersection/EmpowerSection"
 import Header from "../../components/header/Header"
 import Headercards from "../../components/headercards/Headercards"
 import HeroSection from "../../components/herosection/Herosection"
 import Victimssection from "../../components/victimssection/Victimssection"
 
-const Home = ({headerimg, imgheader2, womenhug, huggingpeople, location, womenlaptop, handsshake, manshakehand, womenblond, emily, together}) => {
+const Home = ({headerimg, imgheader2, womenhug, huggingpeople, location, womenlaptop, handsshake, manshakehand, womenblond, emily, together, togetherhug}) => {
   return (
     <div>
       <Header headerimg={headerimg} imgheader2={imgheader2} womenhug={womenhug}/>
@@ -12,6 +13,7 @@ const Home = ({headerimg, imgheader2, womenhug, huggingpeople, location, womenla
       <HeroSection womenlaptop={womenlaptop}/>
       <Victimssection handsshake={handsshake} manshakehand={manshakehand} womenblond={womenblond}/>
       <Clients emily={emily} together={together}/>
+      <EmpowerSection togetherhug={togetherhug}/>
     </div>
   )
 }

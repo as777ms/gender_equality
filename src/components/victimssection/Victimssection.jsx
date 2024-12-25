@@ -10,37 +10,37 @@ const Victimssection = ({ manshakehand, handsshake, womenblond }) => {
 
       <div className="w-full flex flex-wrap justify-between gap-6 sm:w-[95%] sm:justify-center">
         {/* First Image with Background Color */}
-        <div className="w-full sm:w-[30%] h-[400px] rounded-3xl bg-gradient-to-r from-[#4e6a8f] via-[#6e8bb9] to-[#8faad9] shadow-xl hover:scale-105 transform transition-all duration-300 overflow-hidden mb-6 sm:mb-0">
-          <img
+        <div className="w-full sm:w-[30%] h-[400px] rounded-3xl bg-grey-900 shadow-xl hover:scale-105 transform transition-all duration-300 overflow-hidden mb-6 sm:mb-0">
+        <img
             src={manshakehand}
             alt="Man shaking hands"
             className="w-full h-[330px] object-cover rounded-t-3xl"
           />
-          <p className="text-center text-white font-medium mt-4 px-6 text-lg sm:text-base">
+          <p className="text-center text-black font-medium mt-4 px-6 text-lg sm:text-base">
             Building Trust Through Support
           </p>
         </div>
 
         {/* Second Image with Background Color */}
-        <div className="w-full sm:w-[30%] h-[400px] rounded-3xl bg-gradient-to-r from-[#3b4f76] via-[#5d75a5] to-[#7a91c7] shadow-xl hover:scale-105 transform transition-all duration-300 overflow-hidden mb-6 sm:mb-0">
+        <div className="w-full sm:w-[30%] h-[400px] rounded-3xl bg-grey-900 shadow-xl hover:scale-105 transform transition-all duration-300 overflow-hidden mb-6 sm:mb-0">
           <img
             src={handsshake}
             alt="Hands shaking"
             className="w-full h-[330px] object-cover rounded-t-3xl"
           />
-          <p className="text-center text-white font-medium mt-4 px-6 text-lg sm:text-base">
+          <p className="text-center text-black font-medium mt-4 px-6 text-lg sm:text-base">
             Together We Rise
           </p>
         </div>
 
         {/* Third Image with Background Color */}
-        <div className="w-full sm:w-[30%] h-[400px] rounded-3xl bg-gradient-to-r from-[#4e6a8f] via-[#6e8bb9] to-[#8faad9] shadow-xl hover:scale-105 transform transition-all duration-300 overflow-hidden mb-6 sm:mb-0">
+        <div className="w-full sm:w-[30%] h-[400px] rounded-3xl bg-grey-900 shadow-xl hover:scale-105 transform transition-all duration-300 overflow-hidden mb-6 sm:mb-0">
           <img
             src={womenblond}
             alt="Woman with laptop"
             className="w-full h-[330px] object-cover rounded-t-3xl"
           />
-          <p className="text-center text-white font-medium mt-4 px-6 text-lg sm:text-base">
+          <p className="text-center text-black font-medium mt-4 px-6 text-lg sm:text-base">
             Empowered to Succeed
           </p>
         </div>
