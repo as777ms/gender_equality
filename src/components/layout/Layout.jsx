@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { FaInstagram, FaFacebook, FaTelegram, FaPhoneAlt, FaBars } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import Support from '../../pages/support/Support';
+import Loader from '../loader/Loader';
 
 const Layout = () => {
   const { t, i18n } = useTranslation();
@@ -162,7 +163,9 @@ const Layout = () => {
 
       {/* Main Content */}
       <main className="bg-gray-50">
+      {/* <Suspense fallback={<Loader />}> */}
         <Outlet />
+      {/* </Suspense> */}
         <Support />
       </main>
 
