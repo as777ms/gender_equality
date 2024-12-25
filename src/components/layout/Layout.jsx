@@ -47,9 +47,10 @@ const Layout = () => {
 
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-center text-white py-8">
-        <h1 className="text-4xl font-bold mb-4">Together Against Violence</h1>
-        <p className="text-lg">Empowering change, fostering equality, and building a safer future for all.</p>
-      </div>
+  <h1 className="text-4xl font-bold mb-4">{t('Together Against Violence')}</h1>
+  <p className="text-lg">{t('Empowering change, fostering equality, and building a safer future for all.')}</p>
+</div>
+
 
       {/* Navigation Bar */}
       <nav className="w-full bg-gray-900 p-4 shadow-md">

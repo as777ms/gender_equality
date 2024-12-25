@@ -8,6 +8,7 @@ import './i18n';
 import Anonymsms from './pages/anonymsms/Anonymsms.jsx';
 import Specialprojects from './pages/specialprojects/Specialprojects.jsx';
 import Stories from './pages/stories/Stories.jsx';
+import Support from './pages/support/Support.jsx';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/anonymsms' element={<Anonymsms />}/>
         <Route path='/specialprojects' element={<Specialprojects />}/>
         <Route path='/stories' element={<Stories />}/>
+        <Route path='/support' element={<Support />}/>
       </Route>
     </Routes>
   </Router>
