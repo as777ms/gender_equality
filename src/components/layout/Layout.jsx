@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 const Layout = () => {
   const { t, i18n } = useTranslation();
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const [isSocialMediaModalOpen, setSocialMediaModalOpen] = useState(false);
 
   const handleLanguageChange = (event) => {
     i18n.changeLanguage(event.target.value);
@@ -15,12 +16,16 @@ const Layout = () => {
     setDrawerOpen(!isDrawerOpen);
   };
 
+  const toggleSocialMediaModal = () => {
+    setSocialMediaModalOpen(!isSocialMediaModalOpen);
+  };
+
   return (
     <>
       {/* Header Section */}
       <header className="w-full bg-black p-4 text-white flex flex-wrap items-center justify-between">
-        {/* Social Media Icons */}
-        <div className="flex space-x-4 mb-2 sm:mb-0">
+        {/* Social Media Icons (only visible on larger screens) */}
+        <div className="flex space-x-4 mb-2 sm:mb-0 hidden md:flex">
           <FaInstagram className="w-6 h-6 cursor-pointer hover:text-gray-400" />
           <FaFacebook className="w-6 h-6 cursor-pointer hover:text-gray-400" />
           <FaTelegram className="w-6 h-6 cursor-pointer hover:text-gray-400" />
@@ -54,44 +59,70 @@ const Layout = () => {
           >
             <FaBars className="w-6 h-6 text-white" />
           </button>
+          {/* Social Media Modal Toggle Button (Only for Mobile View) */}
+          <button
+            className="md:hidden p-2 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none"
+            onClick={toggleSocialMediaModal}
+          >
+            <FaInstagram className="w-6 h-6 text-white" />
+          </button>
         </div>
       </header>
 
       {/* Drawer for Mobile Navigation */}
       {isDrawerOpen && (
-  <div className="fixed inset-0 backdrop-blur-md bg-white/10 z-50 flex flex-col items-center justify-center text-white">
-    {/* Close Button */}
-    <button
-      className="absolute top-4 right-4 p-2 bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none"
-      onClick={toggleDrawer}
-    >
-      ✕
-    </button>
+        <div className="fixed inset-0 backdrop-blur-md bg-white/10 z-50 flex flex-col items-center justify-center text-white">
+          {/* Close Button */}
+          <button
+            className="absolute top-4 right-4 p-2 bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none"
+            onClick={toggleDrawer}
+          >
+            ✕
+          </button>
 
-    {/* Navigation Links */}
-    <nav className="text-center text-lg w-full max-w-xs rounded-lg p-4 bg-white/20 shadow-lg">
-      {[
-        { to: '/', label: t('home') },
-        { to: '/about', label: t('about') },
-        { to: '/support', label: t('support') },
-        { to: '/info', label: t('info') },
-        { to: '/anonymsms', label: t('Anonimnii istorii') },
-        { to: '/specialprojects', label: t('Special Projects') },
-        { to: '/stories', label: t('istorii') },
-      ].map((link, index) => (
-        <Link
-          key={index}
-          to={link.to}
-          onClick={toggleDrawer}
-          className="block py-4 border-b border-white/30 hover:text-blue-400 last:border-b-0"
-        >
-          {link.label}
-        </Link>
-      ))}
-    </nav>
-  </div>
-)}
+          {/* Navigation Links */}
+          <nav className="text-center text-lg w-full max-w-xs rounded-lg p-4 bg-white/20 shadow-lg">
+            {[
+              { to: '/', label: t('home') },
+              { to: '/about', label: t('about') },
+              { to: '/support', label: t('support') },
+              { to: '/info', label: t('info') },
+              { to: '/anonymsms', label: t('Anonimnii istorii') },
+              { to: '/specialprojects', label: t('Special Projects') },
+              { to: '/stories', label: t('istorii') },
+            ].map((link, index) => (
+              <Link
+                key={index}
+                to={link.to}
+                onClick={toggleDrawer}
+                className="block py-4 border-b border-white/30 hover:text-blue-400 last:border-b-0"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
 
+      {/* Social Media Modal (for mobile) */}
+      {isSocialMediaModalOpen && (
+        <div className="fixed inset-0 backdrop-blur-md bg-white/10 z-50 flex flex-col items-center justify-center text-white">
+          <button
+            className="absolute top-4 right-4 p-2 bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none"
+            onClick={toggleSocialMediaModal}
+          >
+            ✕
+          </button>
+
+          <div className="bg-white/20 p-4 rounded-lg shadow-lg">
+            <div className="flex space-x-4 mb-2">
+              <FaInstagram className="w-6 h-6 cursor-pointer hover:text-gray-400" />
+              <FaFacebook className="w-6 h-6 cursor-pointer hover:text-gray-400" />
+              <FaTelegram className="w-6 h-6 cursor-pointer hover:text-gray-400" />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-center text-white py-8">
