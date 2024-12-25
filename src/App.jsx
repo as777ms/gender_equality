@@ -4,6 +4,11 @@ import About from './pages/about/About.jsx';
 import Home from './pages/home/Home.jsx';
 import Info from './pages/info/Info.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
+import './i18n';
+import Anonymsms from './pages/anonymsms/Anonymsms.jsx';
+import Specialprojects from './pages/specialprojects/Specialprojects.jsx';
+import Stories from './pages/stories/Stories.jsx';
+
 const App = () => {
   return (
     <Router>
@@ -13,6 +18,9 @@ const App = () => {
         <Route path="about" element={<About />} />
         <Route path="info" element={<Info />} />
         <Route path="*" element={<NotFound />} />
+        <Route path='/anonymsms' element={<Anonymsms />}/>
+        <Route path='/specialprojects' element={<Specialprojects />}/>
+        <Route path='/stories' element={<Stories />}/>
       </Route>
     </Routes>
   </Router>
